@@ -6,13 +6,13 @@ load_dotenv()
 
 
 class Config(TypedDict):
-    WATSON_X_API_URL: str
-    WATSON_X_API_KEY: str
-    WATSON_X_PROJECT_ID: str
+    WATSONX_API_URL: str
+    WATSONX_API_KEY: str
+    WATSONX_PROJECT_ID: str
 
 
 config: Config = {
-    "WATSON_X_API_URL": os.getenv("WATSON_X_API_URL"),
-    "WATSON_X_API_KEY": os.getenv("WATSON_X_API_KEY"),
-    "WATSON_X_PROJECT_ID": os.getenv("WATSON_X_PROJECT_ID"),
+    "WATSONX_API_URL": os.getenv("WATSONX_API_URL"),
+    "WATSONX_API_KEY": os.getenv("WATSONX_API_KEY"),
+    "WATSONX_PROJECT_ID": os.getenv("WATSONX_PROJECT_ID"),
 }

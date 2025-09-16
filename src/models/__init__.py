@@ -1,3 +1,3 @@
-from .watson_x import WatsonX
+from .watsonx import WatsonX
 
 __all__ = ["WatsonX"]

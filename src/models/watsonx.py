@@ -8,7 +8,7 @@ class WatsonX:
     @staticmethod
     def get_credentials(config: Config):
         return Credentials(
-            url=config["WATSON_X_API_URL"], api_key=config["WATSON_X_API_KEY"]
+            url=config["WATSONX_API_URL"], api_key=config["WATSONX_API_KEY"]
         )
 
     @staticmethod
@@ -16,5 +16,5 @@ class WatsonX:
         return ModelInference(
             model_id="meta-llama/llama-guard-3-11b-vision",
             credentials=WatsonX.get_credentials(config),
-            project_id=config["WATSON_X_PROJECT_ID"],
+            project_id=config["WATSONX_PROJECT_ID"],
         )
