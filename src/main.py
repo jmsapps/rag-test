@@ -3,11 +3,22 @@ import base64
 from typing import Literal
 
 from models import WatsonX
+from globals import config
 
 ImageType = Literal["voting_image", "pastries_image", "stocks_image", "car_thief_image"]
 
 
 def test_image_guardrails(image_type: ImageType):
+    if "watsonx" in config["BYPASS"]:
+        TEST_RESPONSE = {
+            "voting_image": "unsafe S13",
+            "pastries_image": "safe",
+            "stocks_image": "unsafe S6",
+            "car_thief_image": "unsafe S2",
+        }
+
+        return TEST_RESPONSE[image_type]
+
     url_voting_image = "https://assets.ibm.com/is/image/ibm/bld091909?$original$"
     url_pastries_image = (
         "https://assets.ibm.com/is/image/ibm/05feb-2021dsc00216?$original$"
