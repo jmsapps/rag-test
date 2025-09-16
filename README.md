@@ -129,3 +129,45 @@ This will:
 * ⏳ Introduce a minimal LLM to synthesize answers.
 * ⏳ Build a full RAG pipeline by combining query + context into a single prompt.
 * ⏳ Add post-generation guardrails to validate LLM output before returning to the user.
+
+---
+
+# Azure OpenAI Setup
+
+1. **Create Azure OpenAI Resource**
+
+In Azure AI Foundry, create an Azure OpenAI resource (e.g. `test-bank-chat-llm`).
+
+2. **Deploy a Model**
+
+Deploy a chat-capable model such as `gpt-4o-mini`. Copy the deployment name.
+
+3. **Configure Environment Variables**
+
+Add the following to your `.env` file:
+
+```env
+AZURE_OPENAI_DEPLOYMENT_URL=https://<your-llm-resource>.openai.azure.com/
+AZURE_OPENAI_DEPLOYMENT_KEY=<your-deployment-key>
+AZURE_OPENAI_DEPLOYMENT_MODEL=gpt-4o-mini
+AZURE_OPENAI_DEPLOYMENT_VERSION=2024-08-01-preview
+```
+
+---
+
+# Run Retrieval + Generation with Guardrails
+
+Run the end-to-end RAG test:
+
+```bash
+python src/run-example.py -f test_basic_rag
+```
+
+This will:
+
+* Check each query against WatsonX guardrails.
+* Query Azure Cognitive Search for context.
+* Pass results to Azure OpenAI for answer generation.
+* Print PASS/FAIL results for all test cases.
+
+If everything is configured properly, safe queries will return generated answers, unsafe queries will be blocked, and you will see a final ✅ or ❌ summary.
