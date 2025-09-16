@@ -1,0 +1,4 @@
+image==1.5.33
+requests==2.32.3
+ibm-watsonx-ai==1.1.14
+python-dotenv==1.0.1

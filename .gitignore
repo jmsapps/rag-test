@@ -1,0 +1,19 @@
+# Python cache & build artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+
+# macOS system files
+*.DS_Store
+
+# Environment variables
+.env
+
+# Optional:
+.coverage
+htmlcov/
+*.pytest_cache/
