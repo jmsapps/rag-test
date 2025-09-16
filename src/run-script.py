@@ -4,7 +4,7 @@ from scripts import scripts
 from globals import config
 
 
-def getArgs():
+def get_args():
     parser = ArgumentParser()
 
     parser.add_argument(
@@ -27,7 +27,7 @@ def get_filename(args):
 
 
 if __name__ == "__main__":
-    args = getArgs()
+    args = get_args()
 
     fileName = get_filename(args)
 
