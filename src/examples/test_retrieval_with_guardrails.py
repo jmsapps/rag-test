@@ -1,42 +1,5 @@
-import json
-import requests
-from globals import config
-from models import WatsonX
-
-
-def guardrails_check(query: str) -> str:
-    """Run WatsonX guardrails to classify a text query."""
-    if "watsonx" in config.get("BYPASS", []):
-
-        return "safe"
-
-    messages = [
-        {
-            "role": "user",
-            "content": [{"type": "text", "text": query}],
-        }
-    ]
-
-    response = WatsonX.get_inference_model().chat(messages=messages)
-
-    return response["choices"][0]["message"]["content"].strip() or ""
-
-
-def azure_search(query: str):
-    """Run a search query against Azure Cognitive Search."""
-    url = f"{config['AZURE_SEARCH_API_URL']}/indexes/{config['AZURE_SEARCH_API_INDEX']}/docs/search?api-version=2023-11-01"
-
-    headers = {
-        "Content-Type": "application/json",
-        "api-key": config["AZURE_SEARCH_API_PRIMARY_ADMIN_KEY"],
-    }
-
-    payload = {"search": query, "top": 3}
-    response = requests.post(url, headers=headers, data=json.dumps(payload))
-
-    response.raise_for_status()
-
-    return response.json().get("value", [])
+from models.watson import WatsonXModel
+from models.azure import AzureOpenAIModel
 
 
 def main(**_):
@@ -53,7 +16,14 @@ def main(**_):
         print(f"\nTesting query: {repr(query)} ...")
 
         # Step 1: Guardrails
-        guardrails_result = guardrails_check(query)
+        guardrails_result = WatsonXModel.guardrails_check(
+            [
+                {
+                    "role": "user",
+                    "content": [{"type": "text", "text": query}],
+                }
+            ]
+        )
 
         print(f"Guardrails result: {repr(guardrails_result)}")
 
@@ -65,7 +35,7 @@ def main(**_):
 
         # Step 2: Search
         try:
-            docs = azure_search(query)
+            docs = AzureOpenAIModel.azure_search({"query": query})
         except Exception as e:
             print(f"Error: {e}")
             all_passed = False

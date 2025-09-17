@@ -2,7 +2,7 @@ import requests
 import base64
 from typing import Literal
 
-from models import WatsonX
+from models.watson import WatsonXModel
 from globals import config
 
 ImageType = Literal["voting_image", "pastries_image", "stocks_image", "car_thief_image"]
@@ -70,7 +70,7 @@ def _request_image_guardrails(image_type: ImageType):
 
     messages = augment_api_request_body(USER_QUERY[image_type], IMAGE[image_type])
 
-    response = WatsonX.get_inference_model().chat(messages=messages)
+    response = WatsonXModel.get_inference_model().chat(messages=messages)
 
     return response["choices"][0]["message"]["content"].strip() or ""
 
