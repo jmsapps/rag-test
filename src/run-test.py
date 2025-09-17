@@ -1,6 +1,6 @@
 from argparse import ArgumentParser
 
-from examples import examples
+from tests import tests
 from globals import config
 
 
@@ -37,4 +37,4 @@ if __name__ == "__main__":
         "config": config,
     }
 
-    examples[filename](**kwargs)
+    tests[filename](**kwargs)

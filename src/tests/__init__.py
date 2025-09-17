@@ -5,11 +5,11 @@ from os import (
 )
 
 cwd = getCwd()
-examples = {}
-for fileName in listDir(f"{cwd}/src/examples"):
+tests = {}
+for fileName in listDir(f"{cwd}/src/tests"):
     if fileName.endswith(".py") and fileName != "__init__.py":
         module = fileName.replace(".py", "")
 
-        for funcName, func in importModule(f"examples.{module}").__dict__.items():
+        for funcName, func in importModule(f"tests.{module}").__dict__.items():
             if callable(func) and funcName == "main":
-                examples[module] = func
+                tests[module] = func
