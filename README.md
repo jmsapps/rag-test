@@ -124,14 +124,6 @@ This will:
 
 ---
 
-# To Do / Next Steps
-
-* ⏳ Introduce a minimal LLM to synthesize answers.
-* ⏳ Build a full RAG pipeline by combining query + context into a single prompt.
-* ⏳ Add post-generation guardrails to validate LLM output before returning to the user.
-
----
-
 # Azure OpenAI Setup
 
 1. **Create Azure OpenAI Resource**
@@ -171,3 +163,11 @@ This will:
 * Print PASS/FAIL results for all test cases.
 
 If everything is configured properly, safe queries will return generated answers, unsafe queries will be blocked, and you will see a final ✅ or ❌ summary.
+
+---
+
+# To Do / Next Steps
+
+* ⏳ Introduce a minimal LLM to synthesize answers.
+* ⏳ Build a full RAG pipeline by combining query + context into a single prompt.
+* ⏳ Add post-generation guardrails to validate LLM output before returning to the user.
