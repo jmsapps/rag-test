@@ -52,7 +52,7 @@ WATSONX_API_URL=https://us-south.ml.cloud.ibm.com
 3. Verify your setup by running a test to WatsonX:
 
 ```bash
-python src/run-example.py -f test_image_guardrails
+python src/run-test.py -f test_image_guardrails
 ```
 
 If successful, you should see a guardrails response (e.g. `unsafe S13`).
@@ -112,7 +112,7 @@ You should see your document returned.
 You can run a deterministic retrieval + guardrails test:
 
 ```bash
-python src/run-example.py -f test_retrieval_with_guardrails
+python src/run-test.py -f test_retrieval_with_guardrails
 ```
 
 This will:
@@ -152,7 +152,7 @@ AZURE_OPENAI_DEPLOYMENT_VERSION=2024-08-01-preview
 Run the end-to-end RAG test:
 
 ```bash
-python src/run-example.py -f test_basic_rag
+python src/run-test.py -f test_basic_rag
 ```
 
 This will:
@@ -164,10 +164,3 @@ This will:
 
 If everything is configured properly, safe queries will return generated answers, unsafe queries will be blocked, and you will see a final ✅ or ❌ summary.
 
----
-
-# To Do / Next Steps
-
-* ⏳ Introduce a minimal LLM to synthesize answers.
-* ⏳ Build a full RAG pipeline by combining query + context into a single prompt.
-* ⏳ Add post-generation guardrails to validate LLM output before returning to the user.
