@@ -1,0 +1,85 @@
+InvestorLine Transfer Fees
+Version: 1.0
+Effective Date: 2025-09-19
+
+SUMMARY
+Transfers between InvestorLine accounts are free of charge under normal circumstances. This policy applies to most standard account types, including non-registered accounts, RRSPs, TFSAs, RESPs, and other supported plans.
+
+1) SCOPE OF THIS POLICY
+- Applies to: Internal transfers between accounts held under the same InvestorLine customer profile.
+- Includes: Cash, equities, mutual funds, ETFs, fixed income, GICs, and other supported securities.
+- Excludes: External transfers (to another financial institution) unless explicitly stated otherwise.
+
+2) TYPES OF TRANSFERS COVERED
+a) **Cash Transfers**
+   - Moving available cash balance from one account to another within the same customer profile.
+   - Real-time availability depends on settlement status (T+2 for most securities sales).
+b) **In-Kind Transfers**
+   - Moving securities as-is (no liquidation).
+   - No commission is charged to transfer.
+   - Transfer eligibility: Security must be held in both source and destination account types.
+c) **Partial vs. Full Transfers**
+   - Partial transfers: Only selected assets or cash amounts.
+   - Full transfers: Entire account positions; source account may be closed after completion.
+
+3) FEES
+- Standard internal transfers: $0.
+- Forced liquidation: If a security must be sold because it cannot be held in the destination account, normal trading commissions and potential market impact apply.
+- FX conversion: If transferring between CAD and USD sub-accounts, currency conversion fees apply per prevailing FX spread and schedule.
+- Paper statement reprints, courier services, or manual interventions may incur separate charges unrelated to the transfer fee.
+
+4) TIMING
+- Cash transfers: Typically instant between InvestorLine accounts (during business hours).
+- In-kind transfers: May take 1–3 business days depending on asset type and settlement.
+- Complex holdings (private placements, certain fixed-income instruments): May require additional processing time.
+
+5) HOW TO INITIATE
+- Online Banking: Navigate to “Transfers” → “Between InvestorLine Accounts.”
+- Mobile App: Supported via “Transfers” tab with same-day processing.
+- Phone or Branch: Client Services can initiate on your behalf (may require identity verification and wet signature for certain accounts).
+
+6) TRANSFER RESTRICTIONS
+- Regulatory restrictions: Some securities (e.g., locked-in RRSP funds) cannot be transferred to certain account types.
+- Margin accounts: Ensure margin requirements remain satisfied after transfer. You may be required to deposit collateral before transfer approval.
+- Frozen accounts: Internal compliance holds must be cleared before transfer is processed.
+
+7) COMMON USE CASES
+- Funding TFSA contribution room from non-registered account.
+- Moving matured GIC proceeds into RRSP before contribution deadline.
+- Consolidating cash from multiple accounts for investment.
+- Internal rebalancing: Moving securities to align portfolio risk.
+
+8) EXAMPLES
+Example A — TFSA Contribution:
+- Transfer $6,500 from non-registered cash account to TFSA.
+- Fee: $0. Funds available immediately.
+
+Example B — In-Kind Mutual Fund Transfer:
+- Move 50 units of ABC Growth Fund from RESP to Family RESP.
+- Fee: $0. Processing 1–2 business days.
+
+Example C — Forced Liquidation:
+- Attempt to transfer a security not allowed in destination account (e.g., a restricted share class).
+- Result: Position sold at market price; regular commission charged. Proceeds transferred as cash.
+
+Example D — Currency Conversion:
+- Transfer $10,000 CAD cash to USD account.
+- Fee: $0 transfer fee, but FX spread applies at posted rate.
+
+9) TAX AND REPORTING IMPACT
+- Registered accounts: Contributions and withdrawals must respect CRA rules. Internal transfers do not affect contribution room if staying within the same plan type.
+- Non-registered accounts: Capital gains are not realized when securities are moved in-kind internally.
+- Statements: Both source and destination accounts will show journal entries with matching timestamps.
+
+10) SECURITY AND FRAUD CONTROLS
+- 2FA: Transfers initiated online may require multi-factor authentication.
+- Suspicious activity monitoring: Large or unusual transfers may trigger additional verification.
+- Customer notifications: Confirmation sent by secure message/email after transfer is completed.
+
+11) SUPPORT AND ESCALATION
+- Online Help Centre: Provides walkthroughs and FAQs for common transfer scenarios.
+- Client Services: Available by phone for troubleshooting, including assistance with rejected transfers.
+- Escalations: Complex cases (e.g., estate accounts) are escalated to Back Office Operations.
+
+ONE-SENTENCE CANONICAL STATEMENT
+“Transfers between InvestorLine accounts are free under normal circumstances.”

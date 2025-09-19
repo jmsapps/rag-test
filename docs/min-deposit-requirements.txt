@@ -1,0 +1,135 @@
+Minimum Deposit Requirement
+Version: 1.0
+Effective Date: 2025-09-19
+
+SUMMARY
+The minimum opening deposit for a standard personal Savings Account is $100. This is the smallest amount that must be received and cleared at account opening for the account to be considered fully active.
+
+1) WHAT “MINIMUM OPENING DEPOSIT” MEANS
+- Definition: The minimum opening deposit is the first deposit required to activate a new Savings Account.
+- Amount: $100.
+- Timing: Must be received at or immediately after account opening (same business day when opened in-branch; within 7 calendar days for accounts opened online).
+- Cleared funds: The deposit must clear (i.e., not be reversed or returned). Pending/held funds count toward the requirement once they clear.
+
+2) WHAT THIS IS NOT
+- Not a monthly minimum balance: There is no ongoing monthly balance requirement tied to this rule. Separate balance-related fees or interest tiers may exist but are unrelated to the $100 opening deposit requirement.
+- Not a fee: The $100 remains the customer’s money. It is not charged as a fee.
+- Not an ongoing top-up obligation: After activation, the balance may fluctuate; normal terms and fees apply.
+
+3) ACCEPTABLE FUNDING METHODS
+Any of the following methods can satisfy the $100 minimum opening deposit:
+- Cash deposit at branch or partner location.
+- Cheque deposit (branch, ATM, or mobile deposit).
+- Interac e-Transfer® or external bank transfer (EFT/ACH).
+- Domestic wire transfer.
+- Internal transfer from an existing account held with us.
+
+Notes:
+- For cheque and mobile deposits, standard holds may apply. The account is marked “funded” once the deposit clears.
+- For wires/EFT, processing times vary by sending institution. The “received” timestamp is when funds hit our systems (not when the sender initiates).
+
+4) HOLDS, CLEARING, AND AVAILABILITY
+- Standard holds: Cheques and certain electronic deposits may be subject to holds per our Funds Availability policy. Held funds still count toward the opening deposit once posted, even if not yet available to withdraw.
+- Returns: If the opening deposit is returned (e.g., NSF, chargeback), the account reverts to “not funded.” The customer must re-fund to meet the $100 requirement.
+- Fraud/security reviews: We may extend holds or require additional verification for risk or compliance reasons, especially on first-time deposits.
+
+5) ACCOUNT OPENING WORKFLOWS
+In-Branch Opening:
+- Customer can satisfy the requirement immediately with cash, cheque, or internal transfer.
+- If funded in cash or internal transfer, the account is considered funded immediately.
+- If funded by cheque, the account is considered funded once the cheque posts (subject to holds).
+
+Online Opening:
+- Customer has 7 calendar days from application approval to fund the account by at least $100.
+- Funding options typically include Interac e-Transfer®, EFT pull from a linked external account, or internal transfer from an existing account with us.
+- If no qualifying deposit is received within 7 days, the account may be frozen or closed (see Section 10).
+
+6) JOINT, YOUTH, AND OTHER OWNERSHIP TYPES
+- Joint accounts: The $100 is a single minimum per account, not per owner.
+- Youth/minor accounts (where offered): Follow the product-specific disclosure. Unless otherwise stated, the standard $100 requirement applies.
+- Trust, estate, or power-of-attorney accounts: $100 opening deposit requirement applies unless the product disclosure states otherwise.
+- Business savings products (if offered): Refer to the business product disclosure. This document covers personal Savings Accounts only.
+
+7) PROMOTIONS AND WAIVERS
+- Promotional waivers: From time to time, we may run campaigns that waive or reduce the minimum opening deposit. The promotion terms will state eligibility, timing, and how to claim.
+- Relationship waivers: Certain customers (e.g., private banking or premium tiers) may be eligible for waivers as specified in their package agreements.
+- Documentation: Any waiver must be reflected in the signed disclosures or campaign terms. Absent written confirmation, the standard $100 applies.
+
+8) MULTIPLE DEPOSITS TO REACH $100
+- Aggregation allowed: Customers may make multiple deposits that collectively meet or exceed $100 within the funding window.
+- Partial opening: If initial deposit is <$100, the account remains “partially funded” until cumulative cleared deposits reach $100.
+
+9) CURRENCY AND MULTI-CURRENCY ACCOUNTS
+- Currency: The $100 minimum opening deposit is denominated in Canadian dollars (CAD) for CAD Savings Accounts.
+- Foreign currency savings (if offered): The equivalent of CAD $100 in the account’s currency is required at the FX rate used by our systems at the time of posting (see foreign currency disclosure).
+
+10) FAILURE TO FUND
+- Grace period: 7 calendar days (online) or same business day (in-branch) unless otherwise stated.
+- Actions on non-funding: We may freeze functionality, cancel the application, or close the account.
+- Reopening: Customers may reapply or reopen subject to current product terms and any applicable checks.
+
+11) REFUNDS AND REVERSALS AFTER FUNDING
+- If a qualifying opening deposit is later reversed (e.g., returned cheque), the account may fall back to “not funded” status.
+- We may contact the customer to re-fund within a specified period. If not re-funded, the account may be restricted or closed per standard procedures.
+
+12) DOCUMENTATION AND DISCLOSURES
+- At opening, customers receive (or review online) the Product Disclosure, Fee Schedule, and Funds Availability policy. These documents govern how the $100 minimum is applied, how holds work, and what fees may apply to transactions unrelated to the opening deposit.
+- In case of conflict, the most recent Product Disclosure controls.
+
+13) ACCESS, WITHDRAWALS, AND EARLY ACTIVITY
+- Once the account is funded and active, customers may initiate withdrawals/transfers subject to holds and minimum transactional limits (if any).
+- There is no rule that forces the balance to remain above $100 after activation; however, overdraft is not permitted on savings accounts unless explicitly enabled via an overdraft product.
+
+14) EXAMPLES
+Example A — Single Cash Deposit:
+- Customer deposits $100 cash at branch during account opening.
+- Result: Requirement satisfied immediately; account is active.
+
+Example B — Two e-Transfers:
+- Day 1: $60 e-Transfer received.
+- Day 2: $40 e-Transfer received.
+- Result: Cumulative $100 met; once both post, the account becomes active.
+
+Example C — Cheque Returned:
+- Day 1: $150 cheque posted (hold applies).
+- Day 3: Cheque returned NSF.
+- Result: Opening deposit invalidated; customer must re-fund to meet the $100 requirement.
+
+Example D — Online Opening Window:
+- Account approved Monday; customer sends $100 via linked external account on Thursday.
+- Funds post Friday.
+- Result: Requirement met within 7 days; account becomes active when funds post.
+
+15) FAQs
+Q: What is the minimum opening deposit for a Savings Account?
+A: The minimum opening deposit is $100.
+
+Q: Can I open the account with less than $100 and add more later?
+A: Yes, but the account will not be fully active until cleared deposits total at least $100 within the funding window.
+
+Q: Do held funds count toward the requirement?
+A: Yes, once the deposit is posted; availability for withdrawal may still be subject to holds.
+
+Q: Is the $100 a fee?
+A: No. It’s your money and remains part of your balance.
+
+Q: Do I need to keep $100 in the account at all times?
+A: No ongoing minimum balance is required for this rule. Separate product terms may apply for fees, interest, or tiering.
+
+Q: Can I meet the requirement with a wire or Interac e-Transfer®?
+A: Yes. Wires and Interac e-Transfers are acceptable funding methods.
+
+Q: What if my initial deposit is reversed?
+A: The account returns to “not funded.” You must re-fund to at least $100 to keep it active.
+
+16) COMPLIANCE AND RISK NOTES (INTERNAL)
+- KYC/AML: Funding source and transaction patterns may be reviewed; suspicious activity holds or reporting may apply.
+- Fraud controls: First deposit rules and extended holds may be triggered based on internal risk scores.
+- Recordkeeping: Systems should log the timestamp, method, and amount of the first qualifying deposit and any reversals.
+
+17) CHANGE MANAGEMENT
+- This requirement ($100) is subject to change. Updates will be reflected in the Product Disclosure and internal knowledge bases before effective date.
+- When revised, legacy applications in progress follow the rule stated at time of application unless otherwise communicated in writing.
+
+ONE-SENTENCE CANONICAL STATEMENT
+“The minimum opening deposit for a standard personal Savings Account is $100.”

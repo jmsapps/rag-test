@@ -1,3 +1,5 @@
+from azure.ai.inference import EmbeddingsClient
+from azure.core.credentials import AzureKeyCredential
 from openai import AzureOpenAI
 import json
 import requests
@@ -84,3 +86,21 @@ class AzureOpenAIModel:
         )
 
         return response.choices[0].message.content.strip()
+
+    @staticmethod
+    def azure_openai_generate_embedding(text: str):
+        """Generate an embedding vector for a single text chunk."""
+
+        client = EmbeddingsClient(
+            endpoint=f"{config["AZURE_OPENAI_RESOURCE_URL"]}openai/deployments/embeddings",
+            credential=AzureKeyCredential(
+                config["AZURE_OPENAI_EMBEDDING_DEPLOYMENT_KEY"]
+            ),
+        )
+
+        response = client.embed(
+            input=["first phrase", "second phrase", "third phrase"],
+            model=config["AZURE_OPENAI_EMBEDDING_DEPLOYMENT_MODEL"],
+        )
+
+        return response.data[0].embedding

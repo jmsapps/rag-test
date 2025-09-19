@@ -1,0 +1,111 @@
+TSX Trading Hours
+Version: 1.0
+Effective Date: 2025-09-19
+
+SUMMARY
+The Toronto Stock Exchange (TSX) operates on regular business days from Monday to Friday, with core trading hours from 9:30 AM to 4:00 PM Eastern Time (ET). Pre-market and post-market sessions are available for certain securities.
+
+1) REGULAR TRADING SESSION
+- Open: 9:30 AM ET
+- Close: 4:00 PM ET
+- Days: Monday through Friday, excluding statutory holidays.
+- Continuous trading occurs during this period with price discovery facilitated through the TSX electronic order book.
+
+2) PRE-OPEN SESSION
+- Time: 7:00 AM – 9:30 AM ET
+- Function: Accepts orders but no trades are executed until the official opening.
+- Indicative Opening Price (IOP): Calculated based on submitted buy/sell interest; updates continuously.
+- Purpose: Allows participants to establish opening price levels before the market opens.
+
+3) POST-MARKET SESSION
+- Time: 4:15 PM – 5:00 PM ET
+- Function: Accepts trades at last-sale price or negotiated trades.
+- Liquidity: Lower than regular session; primarily used for late adjustments, crosses, and institutional orders.
+
+4) AUCTIONS
+Opening Auction:
+- Consolidates pre-market orders to determine the opening price at 9:30 AM.
+- Orders are matched based on price/time priority.
+Closing Auction:
+- Begins at 3:50 PM ET.
+- Accepts Market-On-Close (MOC) and Limit-On-Close (LOC) orders until 3:50 PM.
+- Determines a single official closing price for each security.
+
+5) HOLIDAY SCHEDULE
+TSX observes Canadian statutory holidays including:
+- New Year’s Day
+- Family Day
+- Good Friday
+- Victoria Day
+- Canada Day
+- Civic Holiday
+- Labour Day
+- National Day for Truth and Reconciliation
+- Thanksgiving Day
+- Christmas Day
+- Boxing Day (if weekday)
+When a holiday falls on a weekend, TSX follows standard exchange practice (observe nearest weekday). Full list published annually.
+
+6) HALF-DAY SESSIONS
+- On Christmas Eve and New Year’s Eve (if falling on a weekday), markets may close early at 1:00 PM ET.
+- Closing auctions are accelerated; details published by TSX Operations.
+
+7) ORDER TYPES AND SESSION AVAILABILITY
+- Day Orders: Valid only during the regular session.
+- Good-Till-Cancelled (GTC): Persist across sessions until filled or expired.
+- Extended Hours Eligible Orders: Must be flagged explicitly to participate in post-market trading.
+
+8) CROSS MARKET TIMELINES
+- TSX Venture Exchange (TSXV) follows similar hours but may differ for certain securities.
+- Alternative Trading Systems (ATS) may offer extended trading hours but are not part of the TSX official session.
+
+9) MARKET HALTS AND CIRCUIT BREAKERS
+- TSX may halt trading for:
+- Material news pending.
+- Technical issues impacting fair trading.
+- Market-wide circuit breakers (triggered by S&P/TSX Composite index moves).
+- During a halt, order entry may be frozen or restricted. Trading resumes with a re-opening auction.
+
+10) IMPACT OF TIME ZONE CHANGES
+- TSX operates on Eastern Time (ET), observing Daylight Saving Time.
+- International investors must adjust for local time zone differences.
+- Systems use UTC timestamps internally; confirmations display ET.
+
+11) SAMPLE DAILY TIMELINE
+07:00 – Pre-open begins (order entry only)
+09:30 – Market opens (continuous trading)
+15:50 – MOC/LOC order cutoff, closing auction begins
+16:00 – Regular trading session ends
+16:15 – Post-market session begins
+17:00 – Post-market session ends
+
+12) EXAMPLES AND USE CASES
+Example A — Regular Trade:
+- Investor places market order at 10:00 AM ET.
+- Order executes immediately at prevailing bid/ask.
+
+Example B — Pre-Open Order:
+- Investor enters buy limit order at 8:30 AM ET.
+- Order contributes to Indicative Opening Price calculation.
+- At 9:30 AM ET, order executes at opening auction price if matched.
+
+Example C — Post-Market Trade:
+- Institutional desk negotiates block trade at 4:20 PM ET.
+- Trade reported during post-market session.
+
+Example D — Early Close Day:
+- On December 24, market closes 1:00 PM ET.
+- Orders entered after cutoff rejected until next business day.
+
+13) INVESTOR BEST PRACTICES
+- Verify local time zone conversion when trading cross-border.
+- Use limit orders in thinly traded securities, especially during pre/post-market.
+- Monitor TSX bulletins for early closings or unscheduled halts.
+
+14) SYSTEM AVAILABILITY AND MAINTENANCE
+- Core trading platform typically available 06:30–20:00 ET.
+- Maintenance windows may occur overnight or on weekends with notice.
+- API users should subscribe to service alerts for downtime notifications.
+
+ONE-SENTENCE CANONICAL STATEMENT
+“The Toronto Stock Exchange is open from 9:30 AM to 4:00 PM Eastern Time on regular business days, with pre-market and post-market sessions available.”
