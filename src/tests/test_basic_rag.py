@@ -33,7 +33,6 @@ def main(**_):
     ]
 
     all_passed = True
-
     for case in test_cases:
         query = case["query"]
         expected_guardrail = case["expected_guardrail"]
@@ -42,65 +41,49 @@ def main(**_):
         guardrails_result = WatsonXModel.guardrails_check(
             [{"role": "user", "content": [{"type": "text", "text": query}]}]
         )
+        is_unsafe = "unsafe" in guardrails_result.lower()
         print(f"Guardrails result: {repr(guardrails_result)}")
 
-        if expected_guardrail == "unsafe":
-            if "unsafe" in guardrails_result.lower():
-                print("PASS: Guardrails correctly blocked unsafe query.")
-            else:
-                print("FAIL: Guardrails allowed unsafe query.")
-                all_passed = False
-            continue
-
-        # Safe queries should pass guardrails
-        if "unsafe" in guardrails_result.lower():
+        if expected_guardrail == "unsafe" and not is_unsafe:
+            print("FAIL: Guardrails allowed unsafe query.")
+            all_passed = False
+        if expected_guardrail == "safe" and is_unsafe:
             print("FAIL: Guardrails incorrectly blocked safe query.")
             all_passed = False
-            continue
 
-        # Retrieval step
         try:
-            docs = AzureOpenAIModel.azure_search({"query": query})
-        except Exception as e:
-            print(f"FAIL: Retrieval error: {e}")
-            all_passed = False
-            continue
+            docs = AzureOpenAIModel.azure_search({"query": query, "use_vectors": True})
+        except RuntimeError as e:
+            print(f"Azure search error '{e}'")
+            exit(1)
 
         if not docs:
             print("FAIL: No documents retrieved.")
             all_passed = False
             continue
 
-        # Generation step
-        try:
-            prompt = AzureOpenAIModel.azure_openai_generate_prompt(
-                {
-                    "query": query,
-                    "context_docs": docs,
-                }
-            )
+        prompt = AzureOpenAIModel.azure_openai_generate_prompt(
+            {"query": query, "context_docs": docs}
+        )
+        messages = [
+            {
+                "role": "system",
+                "content": (
+                    "You are a helpful banking assistant. "
+                    "Answer using only the provided context. "
+                    f"Guardrails marked this query as {'unsafe' if is_unsafe else 'safe'}. "
+                    "If unsafe, do not provide disallowed information. "
+                    "Instead offer to help them with other services that are deemed safe."
+                ),
+            },
+            {"role": "user", "content": prompt},
+        ]
+        answer = AzureOpenAIModel.azure_openai_generate({"messages": messages})
 
-            messages = [
-                {
-                    "role": "system",
-                    "content": (
-                        "You are a helpful banking assistant. "
-                        "Answer only using the provided context. "
-                        "If the answer cannot be found in the context, reply with 'I don't know.'"
-                    ),
-                },
-                {"role": "user", "content": prompt},
-            ]
-            answer = AzureOpenAIModel.azure_openai_generate({"messages": messages})
-
-            print(f"Generated answer: {answer}")
-            if answer.strip():
-                print("PASS: Received a generated answer.")
-            else:
-                print("FAIL: Empty answer returned.")
-                all_passed = False
-        except Exception as e:
-            print(f"FAIL: Generation error: {e}")
+        if answer.strip():
+            print(f"PASS: Generated answer: {answer}")
+        else:
+            print("FAIL: Empty answer returned.")
             all_passed = False
 
     if all_passed:

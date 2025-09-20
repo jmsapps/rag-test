@@ -4,6 +4,7 @@ from typing import TypedDict, Optional
 class AzureSearchParams(TypedDict):
     query: str
     top: Optional[int]
+    use_vector: Optional[bool]
 
 
 class AzureOpenAIGeneratePromptParams(TypedDict):

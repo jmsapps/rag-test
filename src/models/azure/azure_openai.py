@@ -32,8 +32,30 @@ class AzureOpenAIModel:
         }
 
         payload = {"search": params["query"], "top": params.get("top", 3)}
+
+        if params.get("use_vectors") and params["use_vectors"] is True:
+            embedding = AzureOpenAIModel.azure_openai_generate_embedding(
+                params["query"]
+            )
+
+            payload = {
+                "count": True,
+                "select": "title, content",
+                "vectorQueries": [
+                    {
+                        "kind": "vector",
+                        "vector": embedding,
+                        "fields": "embedding",
+                        "k": params.get("top", 3),
+                    },
+                ],
+            }
+
         response = requests.post(url, headers=headers, data=json.dumps(payload))
-        response.raise_for_status()
+        if response.status_code >= 400:
+            raise RuntimeError(
+                f"Status code: {response.status_code}. Error: {response.text}"
+            )
 
         return response.json().get("value", [])
 
@@ -99,7 +121,7 @@ class AzureOpenAIModel:
         )
 
         response = client.embed(
-            input=["first phrase", "second phrase", "third phrase"],
+            input=[text],
             model=config["AZURE_OPENAI_EMBEDDING_DEPLOYMENT_MODEL"],
         )
 
