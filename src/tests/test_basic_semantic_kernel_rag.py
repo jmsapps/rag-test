@@ -8,7 +8,7 @@ from models.watson import WatsonXModel
 from utils.parsers import dump_json
 
 
-async def run_agentic_rag(config):
+async def run_semantic_kernel_rag(config):
     kernel = Kernel()
     kernel.add_service(
         AzureChatCompletion(
@@ -71,4 +71,4 @@ async def run_agentic_rag(config):
 
 
 def main(config):
-    asyncio.run(run_agentic_rag(config))
+    asyncio.run(run_semantic_kernel_rag(config))
