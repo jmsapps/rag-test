@@ -139,10 +139,10 @@ Deploy a chat-capable model such as `gpt-4o-mini`. Copy the deployment name.
 Add the following to your `.env` file:
 
 ```env
-AZURE_OPENAI_DEPLOYMENT_URL=https://<your-llm-resource>.openai.azure.com/
-AZURE_OPENAI_DEPLOYMENT_KEY=<your-deployment-key>
-AZURE_OPENAI_DEPLOYMENT_MODEL=gpt-4o-mini
-AZURE_OPENAI_DEPLOYMENT_VERSION=2024-08-01-preview
+AZURE_OPENAI_CHAT_DEPLOYMENT_URL=https://<your-llm-resource>.openai.azure.com/
+AZURE_OPENAI_CHAT_DEPLOYMENT_KEY=<your-deployment-key>
+AZURE_OPENAI_CHAT_DEPLOYMENT_MODEL=gpt-4o-mini
+AZURE_OPENAI_CHAT_DEPLOYMENT_VERSION=2024-08-01-preview
 ```
 
 ---

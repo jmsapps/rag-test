@@ -14,14 +14,6 @@ from .types import (
 
 class AzureOpenAIModel:
     @staticmethod
-    def get_azure_openai_client(config: Config):
-        return AzureOpenAI(
-            api_key=config["AZURE_OPENAI_DEPLOYMENT_KEY"],
-            api_version=config["AZURE_OPENAI_DEPLOYMENT_VERSION"],
-            azure_endpoint=config["AZURE_OPENAI_DEPLOYMENT_URL"],
-        )
-
-    @staticmethod
     def azure_search(params: AzureSearchParams):
         """Run a search query against Azure Cognitive Search."""
         url = f"{config['AZURE_SEARCH_API_URL']}/indexes/{config['AZURE_SEARCH_API_INDEX']}/docs/search?api-version=2023-11-01"
@@ -77,7 +69,11 @@ class AzureOpenAIModel:
     @staticmethod
     def azure_openai_generate(params: AzureOpenAIGenerateParams):
         """Call Azure OpenAI to synthesize an answer from retrieved documents."""
-        client: AzureOpenAI = AzureOpenAIModel.get_azure_openai_client(config)
+        client: AzureOpenAI = AzureOpenAI(
+            api_key=config["AZURE_OPENAI_CHAT_DEPLOYMENT_KEY"],
+            api_version=config["AZURE_OPENAI_CHAT_DEPLOYMENT_VERSION"],
+            azure_endpoint=config["AZURE_OPENAI_CHAT_DEPLOYMENT_URL"],
+        )
 
         max_tokens = (
             params["max_tokens"]
@@ -100,7 +96,7 @@ class AzureOpenAIModel:
         )
 
         response = client.chat.completions.create(
-            model=config["AZURE_OPENAI_DEPLOYMENT_MODEL"],
+            model=config["AZURE_OPENAI_CHAT_DEPLOYMENT_MODEL"],
             messages=params["messages"],
             max_tokens=max_tokens,
             temperature=temperature,  # range 0.0 -> 2.0 = deterministic -> creative
