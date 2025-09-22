@@ -137,7 +137,9 @@ class AzureAgentModel:
             "Always call `guardrails_check` first. "
             "If 'unsafe', refuse and suggest allowed help. "
             "If 'safe', call `search_docs`, parse JSON, join 'content' fields, "
-            "and answer ONLY from that context; if insufficient, say so."
+            "and answer ONLY from that context; If insufficient, say so. "
+            "If irrelevant, kindly let the user know that you can only answer questions related "
+            "to InvestorLine."
         )
 
         self.agent = ChatCompletionAgent(
