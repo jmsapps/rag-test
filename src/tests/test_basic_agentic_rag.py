@@ -1,4 +1,6 @@
-import asyncio, json, time, sys
+import asyncio
+import time
+import sys
 from typing import Annotated
 from semantic_kernel.connectors.ai.open_ai import (
     AzureChatCompletion,
@@ -99,7 +101,7 @@ class Tools:
                 "content_preview": (docs[0].get("content", "")[:160] + "..."),
             }
         self.logger.add("search_docs", {"q": q}, preview, t)
-        return json.dumps(docs, ensure_ascii=False)
+        return dump_json(docs)
 
 
 async def run_agentic_rag(config):

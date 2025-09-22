@@ -164,3 +164,10 @@ This will:
 
 If everything is configured properly, safe queries will return generated answers, unsafe queries will be blocked, and you will see a final ✅ or ❌ summary.
 
+# Run Chatbot!
+
+```bash
+python src/main.py
+```
+
+Have fun!

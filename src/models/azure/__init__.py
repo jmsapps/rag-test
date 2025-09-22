@@ -1,3 +1,4 @@
+from .azure_agent import AzureAgentModel
 from .azure_openai import AzureOpenAIModel
 from .types import (
     AzureSearchParams,
@@ -6,8 +7,9 @@ from .types import (
 )
 
 __all__ = [
-    "AzureOpenAIModel",
-    "AzureSearchParams",
+    "AzureAgentModel",
     "AzureOpenAIGenerateParams",
     "AzureOpenAIGeneratePromptParams",
+    "AzureOpenAIModel",
+    "AzureSearchParams",
 ]
