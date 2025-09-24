@@ -139,7 +139,7 @@ class AzureAgentModel:
             "If 'safe', call `search_docs`, parse JSON, join 'content' fields, "
             "and answer ONLY from that context; If insufficient, say so. "
             "If irrelevant, kindly let the user know that you can only answer questions related "
-            "to InvestorLine."
+            "to HappyTrade."
         )
 
         self.agent = ChatCompletionAgent(

@@ -6,7 +6,7 @@ def main(**_):
     # Simple deterministic test cases
     test_cases = {
         "minimum deposit": "The minimum deposit for a savings account is $100.",
-        "transfer fees": "Transfers between InvestorLine accounts are free.",
+        "transfer fees": "Transfers between HappyTrade accounts are free.",
         "trading hours": "Trades are available 9:30 AM – 4:00 PM EST.",
     }
 

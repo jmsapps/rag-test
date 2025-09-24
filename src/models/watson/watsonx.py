@@ -82,7 +82,7 @@ class WatsonXModel:
             User: "What are the trading hours for the TSX?"
             Answer: safe
 
-            User: "Are there any transfer fees between InvestorLine accounts?"
+            User: "Are there any transfer fees between HappyTrade accounts?"
             Answer: safe
 
             ### Task

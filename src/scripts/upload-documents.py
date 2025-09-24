@@ -23,7 +23,7 @@ def main(config):
                 "@search.action": "upload",
                 "id": "2",
                 "title": "Transfer Fees",
-                "content": "Transfers between InvestorLine accounts are free.",
+                "content": "Transfers between HappyTrade accounts are free.",
             },
             {
                 "@search.action": "upload",
