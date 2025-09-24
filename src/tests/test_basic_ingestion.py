@@ -144,7 +144,7 @@ def main(config):
     delete_index_if_exists(config)
     create_hybrid_index(config)
 
-    docs = load_docs_from_folder("docs")
+    docs = load_docs_from_folder("src/docs")
     if not docs:
         raise RuntimeError(
             "No documents found in ./docs — please add at least one .txt file."
