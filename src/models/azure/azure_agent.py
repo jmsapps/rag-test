@@ -95,12 +95,15 @@ class _Tools:
         preview = {"count": len(docs)}
 
         if docs:
-            d0 = docs[0]
-            preview["first"] = {
-                "title": d0.get("title"),
-                "chunk_type": d0.get("chunk_type", "content"),  # fallback
-                "content_preview": (d0.get("content", "")[:160] + "..."),
-            }
+            preview["items"] = []
+            for doc in docs:
+                preview["items"].append(
+                    {
+                        "title": doc.get("title"),
+                        "chunk_type": doc.get("chunk_type", "content"),  # fallback
+                        "content_preview": (doc.get("content", "")[:160] + "..."),
+                    }
+                )
 
         self.logger.add("search_docs", {"q": q}, preview, t0)
         return dump_json(docs)
@@ -116,7 +119,7 @@ class AzureAgentModel:
         instructions: Optional[str] = None,
         temperature: float = 0.0,
         max_tokens: Optional[int] = None,
-        top_p: Optional[float] = None
+        top_p: Optional[float] = None,
     ):
         self.config = config
         self.logger = _RunLogger()
@@ -138,16 +141,20 @@ class AzureAgentModel:
             settings.max_tokens = max_tokens
 
         system_message = instructions or (
-            "Always call `guardrails_check` first. "
+            "You must ALWAYS call `guardrails_check` first. "
+            "NEVER answer directly from your own knowledge. "
             "If 'unsafe', refuse and suggest allowed help. "
-            "If 'safe', call `search_docs`, parse JSON, join 'content' fields, "
-            "Use `summary` chunks first for broad context. "
-            "Use `heading` chunks for navigation or locating sections. "
-            "Use `detailed` chunks for step-by-step or exact answers. "
+            "If 'safe', you MUST call `search_docs` to retrieve documents. "
+            "Parse the JSON returned. "
+            "Use `summary` chunks for broad context, `heading` chunks for "
+            "navigation, and `detailed` chunks for exact answers ONLY if "
+            "`heading` and `summary` are insufficient. "
             "If only `content` is present (older indexes), use it as before. "
-            "Answer ONLY from the provided docs. If insufficient, say so. "
-            "If irrelevant, kindly let the user know that you can only answer questions related "
-            "to HappyTrade."
+            "Answer ONLY from the retrieved docs. "
+            "If insufficient, say: 'I'm sorry, I couldn't find any information "
+            "about that. Can you please reword your question?' "
+            "If irrelevant, kindly let the user know that you can only answer "
+            "questions related to HappyTrade."
         )
 
         self.agent = ChatCompletionAgent(
@@ -168,8 +175,9 @@ class AzureAgentModel:
     async def async_ask(self, question: str) -> Tuple[str, Dict[str, Any]]:
         """Async ask. Returns (answer_text, full_trace_dict)."""
         self.chat_history.add_user_message(question)
-        self.logger = _RunLogger()
+        self.logger.t0 = time.time()
         self.logger.user = {"question": question}
+        self.logger.tools.clear()
 
         try:
             resp = await asyncio.wait_for(

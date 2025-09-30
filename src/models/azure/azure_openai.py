@@ -33,7 +33,7 @@ class AzureOpenAIModel:
 
             payload = {
                 "count": True,
-                "select": "title, content",
+                "select": "title, content, chunk_type",
                 "vectorQueries": [
                     {
                         "kind": "vector",

@@ -4,7 +4,7 @@ from globals import config
 
 def chat(azure_agent: AzureAgentModel) -> bool:
     try:
-        user_input = input("User: ")
+        user_input = input("\nUser: ")
     except KeyboardInterrupt:
         print("\n\nExiting chat...")
         return False
@@ -16,10 +16,18 @@ def chat(azure_agent: AzureAgentModel) -> bool:
         print("\n\nExiting chat...")
         return False
 
-    response, _ = azure_agent.ask(user_input)
+    response, trace = azure_agent.ask(user_input)
 
     if response:
-        print(f"Azure Agent: {response}")
+        print(f"\nAzure Agent: {response}")
+
+    if trace.get("tools"):
+        print("\n--- Agent Internal Trace ---")
+        for t in trace["tools"]:
+            print(f"[{t['tool']}] q={t['args'].get('q')} → {t['result']}")
+        print("-----------------------------\n")
+    else:
+        print(f"No tools found: {trace}")
 
     return True
 
