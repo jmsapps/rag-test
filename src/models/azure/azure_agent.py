@@ -93,11 +93,15 @@ class _Tools:
         t0 = time.time()
         docs = AzureOpenAIModel.azure_search({"query": q, "use_vectors": True})
         preview = {"count": len(docs)}
+
         if docs:
+            d0 = docs[0]
             preview["first"] = {
-                "title": docs[0].get("title"),
-                "content_preview": (docs[0].get("content", "")[:160] + "..."),
+                "title": d0.get("title"),
+                "chunk_type": d0.get("chunk_type", "content"),  # fallback
+                "content_preview": (d0.get("content", "")[:160] + "..."),
             }
+
         self.logger.add("search_docs", {"q": q}, preview, t0)
         return dump_json(docs)
 
@@ -137,7 +141,11 @@ class AzureAgentModel:
             "Always call `guardrails_check` first. "
             "If 'unsafe', refuse and suggest allowed help. "
             "If 'safe', call `search_docs`, parse JSON, join 'content' fields, "
-            "and answer ONLY from that context; If insufficient, say so. "
+            "Use `summary` chunks first for broad context. "
+            "Use `heading` chunks for navigation or locating sections. "
+            "Use `detailed` chunks for step-by-step or exact answers. "
+            "If only `content` is present (older indexes), use it as before. "
+            "Answer ONLY from the provided docs. If insufficient, say so. "
             "If irrelevant, kindly let the user know that you can only answer questions related "
             "to HappyTrade."
         )
