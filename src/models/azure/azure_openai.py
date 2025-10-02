@@ -1,11 +1,10 @@
 from azure.ai.inference import EmbeddingsClient
 from azure.core.credentials import AzureKeyCredential
-from semantic_kernel.contents import ChatHistory
 from openai import AzureOpenAI
 import json
 import requests
 
-from globals import config, Config
+from globals import config
 from .types import (
     AzureSearchParams,
     AzureOpenAIGenerateParams,
